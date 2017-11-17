@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+    <!-- Bootstrap -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+  </head>
+  <body>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="js/bootstrap.js"></script>
+ <!-- Include Date Range Picker -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var date_input=$('input[name="date"]'); //our date input has the name "date"
+		var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+		date_input.datepicker({
+			format: 'mm/dd/yyyy',
+			container: container,
+			todayHighlight: true,
+			autoclose: true,
+		})
+	})
+</script>
+   
+    
+    
+<!--Container -->    
+  <div class="container-fluid"> 
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#inverseNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          <a class="navbar-brand" href="#">Quote Generator</a></div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="inverseNavbar1">
+          <ul class="nav navbar-nav">
+            <li class="active"></li>
+            <li></li>
+            <li class="dropdown">
+<ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+                <li class="divider"></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+<ul class="nav navbar-nav navbar-right">
+          <li></li>
+            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Action<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action1</a></li>
+                <li><a href="#">Action2</a></li>
+                <li><a href="#">Action3</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Action4</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title">Quick Quote</h3>
+	  </div>
+	  <div class="panel-body"> 
+<form class="form-horizontal">
+<fieldset class="col-lg-7">
+
+<!-- Form Name -->
+<!--<legend>Quick Quote</legend> -->
+
+<!-- Select States -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="states">States</label>
+  <div class="col-md-4">
+    <select id="states" name="states" class="form-control">
+      <option value="1">California</option>
+      <option value="2">Minnesota</option>
+      <option value="3">Ohio</option>
+      <option value="4">Texas</option>
+      <option value="5">Miami</option>
+    </select>
+  </div>
+</div>
+<div class="form-group ">
+      <label class="col-md-4 control-label" for="date">
+       Date of Birth
+       
+      </label>
+      <div class="col-md-4 control-label">
+       <div class="input-group">
+        <div class="input-group-addon">
+         <i class="fa fa-calendar">
+         </i>
+        </div>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+       </div>
+      </div>
+     </div>
+<!-- Gender(inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="gender">Gender</label>
+  <div class="col-md-4"> 
+    <label class="radio-inline" for="gender-0">
+      <input type="radio" name="gender" id="gender-0" value="1" checked="checked">
+      Male
+    </label> 
+    <label class="radio-inline" for="gender-1">
+      <input type="radio" name="gender" id="gender-1" value="2">
+      Female
+    </label>
+  </div>
+</div>
+<!-- Height -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="height">Height</label>
+  <div class="col-md-4"> 
+          <input type="text" class="form-control"  name="height" id="height">
+          <!--<span class="has-error">error text</span>-->
+    </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="weight">Weight</label>
+  <div class="col-md-4"> 
+    
+      <input type="text" class="form-control"  name="weight" id="weight">
+     <!-- <span class="has-error">error text</span>-->
+   
+    </div>
+</div>
+
+<!--Smoker status -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="smoker">Smoker Status</label>
+  <div class="col-md-4 col-lg-5"> 
+    <label class="radio-inline" for="smoker_0">
+      <input type="radio" name="smoker" id="smoker_0" value="0" checked="checked">
+      Smoker
+    </label> 
+    <label class="radio-inline" for="smoker_1">
+      <input type="radio" name="nonsmoker" id="smoker_1" value="1">
+      Non-Smoker
+    </label>
+  </div>
+</div>
+<!-- Select Coverage -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="coverages">Coverages</label>
+  <div class="col-md-4">
+    <select id="coverages" name="coverages" class="form-control">
+      <option value="1">$100000</option>
+      <option value="2">$150000</option>
+      <option value="3">$200000</option>
+      <option value="4">$250000</option>
+      <option value="5">$300000</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Period -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="periods">Period</label>
+  <div class="col-md-4">
+    <select id="periods" name="periods" class="form-control">
+      <option value="1">5 years</option>
+      <option value="2">10 years</option>
+      <option value="3">15 years</option>
+      <option value="4">20 years</option>
+      <option value="5">25 years</option>
+    </select>
+  </div>
+</div>
+<!-- Quote Submit Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="getQuoteSubmit"></label>
+  <div class="col-md-4">
+    <button id="getQuoteSubmit" name="getQuoteSubmit" class="btn btn-primary">Get Quote</button>
+  </div>
+</div>
+</fieldset>
+</form>
+ </div>
+	  
+    </div>
+  </div>
+  </body>
+</html>
