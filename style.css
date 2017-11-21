@@ -1,0 +1,13 @@
+.container-fluid {
+	width: 85%;
+}
+body {
+	background-color: #4D4D4D;
+}
+.container-fluid .navbar-header .navbar-brand {
+	left: auto;
+}
+.panel.panel-default .panel-heading .panel-title {
+	font-weight: bold;
+}
+
